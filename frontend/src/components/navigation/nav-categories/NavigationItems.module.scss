@@ -1,0 +1,38 @@
+@import './../../../assets/colors.module';
+
+.items {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 1em 1.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	@media (min-width: 768px){
+		margin: 0;
+	}
+
+	&__list {
+		list-style: none;
+		width: 100%;
+		@media (min-width: 768px) {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	&__item {
+		margin: 1em 0;
+		cursor: pointer;
+		padding: 1em;
+		border-radius: 12px;
+		transition: all 0.6s;
+		@media (min-width: 768px) {
+			padding: 0.5em 1em;
+			margin: 0 1em;
+		}
+		&:hover {
+			background-color: $primary-color;
+			color: $third-font-color;
+			box-shadow: 2px 2px 10px $primary-color;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+@import './../../../assets/colors.module';
+
+.sidebar {
+	position: absolute;
+	top: 57px;
+	right: 0;
+	width: 100%;
+	max-width: 300px;
+	height: 100vh;
+	background-color: $secondary-color;
+	transform: translateX(400px);
+	transition: transform 0.8s;
+}
+
+.active {
+	transform: translateX(0);
+}
