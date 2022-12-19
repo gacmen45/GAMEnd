@@ -2,6 +2,7 @@ import './App.module.scss'
 
 import Home from './pages/home/Home'
 import Navigation from './components/navigation/Navigation'
+import Category from './pages/category/Category'
 import { Routes, Route,BrowserRouter } from 'react-router-dom'
 import { ApolloClient,InMemoryCache,ApolloProvider } from '@apollo/client'
 
@@ -19,6 +20,7 @@ function App() {
 				<Navigation />
 			<Routes>
          <Route path='/' element={<Home/>}/>
+         <Route path='/category/:id' element={<Category/>}/>
 			</Routes>
 		</div>
       </ApolloProvider>
