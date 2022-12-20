@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "posts"
+    }
+  }
+}

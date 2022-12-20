@@ -1,14 +1,16 @@
 import styles from './Home.module.scss'
 import { useQuery, gql } from '@apollo/client'
+import { Link } from 'react-router-dom'
 
-const REVIEWS = gql`
-	query GetReviews {
-		reviews {
+const POSTS = gql`
+	query GetPosts {
+		posts {
 			data {
 				id
 				attributes {
 					title
 					rating
+                    description
 					content
 					publishedAt
 				}
@@ -17,8 +19,9 @@ const REVIEWS = gql`
 	}
 `
 
+
 const Home = () => {
-	const { loading, error, data } = useQuery(REVIEWS)
+	const { loading, error, data } = useQuery(POSTS)
 
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
@@ -26,12 +29,14 @@ const Home = () => {
 
 	return <div className={styles.test}>
         <h2>HOMEPAGE</h2>
-        {data.reviews.data.map(review => (
-            <div key={review.id}>
-            <h3>{review.attributes.title}</h3>
-            <p>{review.attributes.rating}</p>
-            <p>{review.attributes.content}</p>
-            <p>{review.attributes.publishedAt}</p>
+        {data.posts.data.map(post => (
+            <div key={post.id}>
+            <h3>{post.attributes.title}</h3>
+            <p>{post.attributes.rating}</p>
+            <p>{post.attributes.description}</p>
+            <p>{post.attributes.content}</p>
+            <p>{post.attributes.publishedAt}</p>
+            <Link to={`/post/${post.id}`}>Więcej</Link>
             </div>
         ))}
     </div>

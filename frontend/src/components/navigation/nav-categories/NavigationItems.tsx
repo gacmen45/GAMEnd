@@ -1,6 +1,7 @@
 import classes from './NavigationItems.module.scss'
 
 import { gql,useQuery } from '@apollo/client'
+import { Link } from 'react-router-dom'
 
 const CATEGORIES = gql`
 query GetCategories{
@@ -23,7 +24,6 @@ const NavigationItems = () => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
-	console.log(data)
 
 
 	return (
@@ -33,7 +33,7 @@ const NavigationItems = () => {
 					<li className={classes['items__item']}>{category}</li>
 				))} */}
 				{data.categories.data.map(category=> (
-					<li key={category.id} className={classes['items__item']}>{category.attributes.name}</li>
+					<Link to={`/category/${category.id}`}><li key={category.id} className={classes['items__item']}>{category.attributes.name}</li></Link>
 				))}
 			</ul>
 		</div>

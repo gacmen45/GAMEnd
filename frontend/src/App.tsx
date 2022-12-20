@@ -5,6 +5,7 @@ import Navigation from './components/navigation/Navigation'
 import Category from './pages/category/Category'
 import { Routes, Route,BrowserRouter } from 'react-router-dom'
 import { ApolloClient,InMemoryCache,ApolloProvider } from '@apollo/client'
+import Post from './pages/post/Post'
 
 const client = new ApolloClient({
    uri: 'http://localhost:1337/graphql',
@@ -21,6 +22,7 @@ function App() {
 			<Routes>
          <Route path='/' element={<Home/>}/>
          <Route path='/category/:id' element={<Category/>}/>
+         <Route path='/post/:id' element={<Post/>}/>
 			</Routes>
 		</div>
       </ApolloProvider>
