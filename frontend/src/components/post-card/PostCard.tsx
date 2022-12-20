@@ -11,13 +11,12 @@ interface Props{
 
 const PostCard = (props:Props) => {
 	return (
-		<div key={props.id}>
-            <p>test</p>
-			<h3>{props.title}</h3>
-			<p>{props.description}</p>
-			<p>{props.content}</p>
-			<p>{props.publishedAt}</p>
-			<Link to={`/post/${props.id}`}>Więcej</Link>
+		<div key={props.id} className={styles['card__box']}>
+			<img className={styles['card__img']} src="https://hips.hearstapps.com/wdy.h-cdn.co/assets/17/39/cola-0247.jpg" alt="" />
+			<h3 className={styles['card__title']}>{props.title}</h3>
+			<p className={styles['card__content']}>{props.content.substring(0,200)}</p>
+			<p className={styles['card__publishedAt']}>{props.publishedAt}</p>
+			<Link to={`/post/${props.id}`}><button>Czytaj dalej</button></Link>
 		</div>
 	)
 }

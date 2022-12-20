@@ -16,14 +16,6 @@
       "type": "string",
       "required": true
     },
-    "rating": {
-      "type": "integer",
-      "max": 5,
-      "min": 1
-    },
-    "description": {
-      "type": "string"
-    },
     "content": {
       "type": "richtext",
       "required": true
