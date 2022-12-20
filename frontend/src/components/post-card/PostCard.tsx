@@ -18,7 +18,7 @@ const PostCard = (props:Props) => {
 const description = `${props.content.substring(0,200)}...`
 	
 	return (
-		<div key={props.id} className={styles['card__box']}>
+		<div key={props.id} className={`${styles['card__box']} ${props.handleView?styles.test:''}`}>
 			<Link to={`/post/${props.id}`} className={styles['card__link']}>
 				<div className={styles['card__img']}>
 			<img  src={image} alt="" />
