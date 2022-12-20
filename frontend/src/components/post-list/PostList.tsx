@@ -11,6 +11,20 @@ const POSTS = gql`
         title
         content
         publishedAt
+		categories{
+          data{
+            attributes{
+              name
+            }
+          }
+        }
+		image{
+          data{
+            attributes{
+              url
+            }
+          }
+        }
       }
     }
   }
@@ -21,9 +35,11 @@ interface Post {
 	id: string
 	attributes: any
 	title: string
-	description: string
 	content: string
 	publishedAt: string
+	image:string
+	categories:string
+	category:string
 }
 
 const PostList = () => {
@@ -32,9 +48,10 @@ const PostList = () => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
-    console.log(data);
+    
 
 	return (
+
 		<div className={styles['list__box']}>
             <div className={styles['list__header']}>
             <h3>Wszystkie posty</h3>
@@ -46,9 +63,11 @@ const PostList = () => {
 					key={post.id}
 					id={post.id}
 					title={post.attributes.title}
-					description={post.attributes.description}
 					content={post.attributes.content}
 					publishedAt={post.attributes.publishedAt}
+					image={post.attributes.image.data.attributes.url}
+					categories={post.attributes.categories.data.map((category:Post)=>category.attributes.name)}
+					
 				/>
 			))}
             </div>
