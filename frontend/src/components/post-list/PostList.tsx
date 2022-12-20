@@ -1,6 +1,7 @@
 import styles from './PostList.module.scss'
 import { useQuery, gql } from '@apollo/client'
 import PostCard from '../post-card/PostCard'
+import { useState } from 'react'
 
 const POSTS = gql`
 	query GetPosts {
@@ -40,22 +41,32 @@ interface Post {
 	image:string
 	categories:string
 	category:string
+	handleView:any
 }
 
 const PostList = () => {
+	const [view,setView] = useState(false)
+
+const handleView = () => {
+	setView(current=>!current)
+}
+
 	const { loading, error, data } = useQuery(POSTS)
 
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
     
+	const postAmount = (data.posts.data.map(post=>post.id)).slice(-1)
 
+	
 	return (
 
 		<div className={styles['list__box']}>
             <div className={styles['list__header']}>
             <h3>Wszystkie posty</h3>
-            <p>(tutaj będzie liczba postów)</p>
+            <p>{postAmount}</p>
+			<button onClick={handleView}>change</button>
             </div>
             <div className={styles['list__items']}>
 			{data.posts.data.map((post: Post) => (
@@ -67,6 +78,7 @@ const PostList = () => {
 					publishedAt={post.attributes.publishedAt}
 					image={post.attributes.image.data.attributes.url}
 					categories={post.attributes.categories.data.map((category:Post)=>category.attributes.name)}
+					handleView={view}
 					
 				/>
 			))}

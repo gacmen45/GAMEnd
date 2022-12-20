@@ -33,6 +33,12 @@
       "type": "media",
       "multiple": false,
       "required": true
+    },
+    "authors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::author.author",
+      "inversedBy": "posts"
     }
   }
 }
