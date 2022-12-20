@@ -1,6 +1,7 @@
 import styles from './PostList.module.scss'
 import { useQuery, gql } from '@apollo/client'
 import { Link } from 'react-router-dom'
+import PostCard from '../post-card/PostCard'
 
 const POSTS = gql`
 	query GetPosts {
@@ -18,6 +19,15 @@ const POSTS = gql`
 	}
 `
 
+interface Post{
+    id:string;
+    title:string;
+    description:string;
+    content:string;
+    publishedAt:string;
+    }
+
+
 const PostList = () => {
     const { loading, error, data } = useQuery(POSTS)
 
@@ -26,13 +36,15 @@ const PostList = () => {
 
 return (<div>
     {data.posts.data.map(post => (
-        <div key={post.id}>
-        <h3>{post.attributes.title}</h3>
-        <p>{post.attributes.description}</p>
-        <p>{post.attributes.content}</p>
-        <p>{post.attributes.publishedAt}</p>
-        <Link to={`/post/${post.id}`}>Więcej</Link>
-        </div>
+        <PostCard
+        key={post.id}
+        id={post.id}
+        title={post.attributes.title}
+        description={post.attributes.description}
+        content={post.attributes.content}
+        publishedAt={post.attributes.publishedAt}
+        />
+        
     ))}
     </div>
 )
