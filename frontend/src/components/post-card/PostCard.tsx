@@ -18,15 +18,17 @@ const PostCard = (props:Props) => {
 const description = `${props.content.substring(0,200)}...`
 	
 	return (
-		<Link to={`/post/${props.id}`}style={{ textDecoration: 'none' }} className={styles['card__link']}>
 		<div key={props.id} className={styles['card__box']}>
-			<img className={styles['card__img']} src={image} alt="" />
+			<Link to={`/post/${props.id}`} className={styles['card__link']}>
+				<div className={styles['card__img']}>
+			<img  src={image} alt="" />
+			</div>
 			<h3 className={styles['card__title']}>{props.title}</h3>
 			<ReactMarkdown className={styles['card__content']}>{description}</ReactMarkdown>
 			<p className={styles['card__publishedAt']}>{date}</p>
 			<p className={styles['card__category']}>{props.categories}</p>
-		</div>
 		</Link>
+		</div>
 	)
 }
 
