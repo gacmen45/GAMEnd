@@ -1,14 +1,14 @@
 import styles from './Home.module.scss'
 import PostList from '../../components/post-list/PostList'
+import Wrapper from '../../components/UI/wrapper/Wrapper'
 
 
 
 const Home = () => {
 	
-	return <div className={styles.test}>
-        <h2>HOMEPAGE</h2>
+	return <Wrapper className={styles.container}>
 		<PostList/>
-    </div>
+    </Wrapper>
 }
 
 export default Home

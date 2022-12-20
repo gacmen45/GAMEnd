@@ -14,7 +14,6 @@ query GetCategory($id:ID!){
             id
             attributes {
               title
-              description
               content
             }
           }
@@ -44,7 +43,6 @@ const allPosts = data.category.data.attributes.posts.data
         {allPosts.map(post=>(
           <div>
           <h3>{post.attributes.title}</h3>
-          <p>{post.attributes.description}</p>
           <p>{post.attributes.content}</p>
           </div>
         ))}

@@ -1,4 +1,4 @@
-import classes from './NavigationItems.module.scss'
+import styles from './NavigationItems.module.scss'
 
 import { gql,useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
@@ -27,13 +27,11 @@ const NavigationItems = () => {
 
 
 	return (
-		<div className={classes.items}>
-			<ul className={classes['items__list']}>
-				{/* {categories.map(category => (
-					<li className={classes['items__item']}>{category}</li>
-				))} */}
+		<div className={styles.items}>
+			<ul className={styles['items__list']}>
+				
 				{data.categories.data.map(category=> (
-					<Link to={`/category/${category.id}`}><li key={category.id} className={classes['items__item']}>{category.attributes.name}</li></Link>
+					<Link to={`/category/${category.id}`} className={styles['items__link']}><li key={category.id} className={styles['items__item']}>{category.attributes.name}</li></Link>
 				))}
 			</ul>
 		</div>

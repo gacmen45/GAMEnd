@@ -1,7 +1,6 @@
 import styles from './Post.module.scss'
 import { useQuery, gql } from '@apollo/client'
 import { useParams } from 'react-router-dom'
-import reactMarkdown from 'react-markdown'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
 const POST = gql`
@@ -11,8 +10,6 @@ const POST = gql`
 				id
 				attributes {
 					title
-					rating
-                    description
 					content
 				}
 			}
