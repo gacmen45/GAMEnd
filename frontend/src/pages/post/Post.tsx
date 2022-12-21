@@ -1,56 +1,19 @@
 import styles from './Post.module.scss'
-import { useQuery, gql } from '@apollo/client'
-import { Link, useParams } from 'react-router-dom'
+
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import Wrapper from '../../components/UI/wrapper/Wrapper'
 import remarkBreaks from 'remark-breaks'
+import { usePost } from '../../hooks/usePost'
 
-const POST = gql`
-	query GetPost($id: ID!) {
-		post(id: $id) {
-			data {
-				id
-				attributes {
-					title
-					content
-					authors {
-						data {
-							attributes {
-								author
-							}
-						}
-					}
-					categories {
-						data {
-							id
-							attributes {
-								name
-							}
-						}
-					}
-					publishedAt
-					image {
-						data {
-							attributes {
-								url
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-`
+
 
 const Post = () => {
-	const { id } = useParams()
-	const { loading, error, data } = useQuery(POST, {
-		variables: { id: id },
-	})
+	
+
+	const {loading,error,data}= usePost()
 
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
-	console.log(data)
 
 	const header = data.post.data.attributes.title
 	const heroImg = `http://localhost:1337${data.post.data.attributes.image.data.attributes.url}`
