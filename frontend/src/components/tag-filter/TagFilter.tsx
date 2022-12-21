@@ -1,5 +1,7 @@
 import styles from './TagFilter.module.scss'
 import { useTags } from '../../hooks/useTags'
+import Card from '../UI/wrapper/Card/Card'
+import { Link } from 'react-router-dom'
 
 const TagFilter = () => {
 	const { loading, error, data } = useTags()
@@ -8,10 +10,11 @@ const TagFilter = () => {
 	if (error) return <p>error...</p>
 
 	return (
-		<div className={styles['tag__container']}>
+		<Card className={styles['tag__container']}>
 			<h2 className={styles['tag__header']}>Sortuj według tagów:</h2>
 			<ul className={styles['tag__list']}>
 				{data.tags.data.map(tag => (
+                    <Link to={`/tag/${tag.id}`}>
 					<li className={styles['tag__item']}>
 						<div className={styles['tag__item-box']}>
                             <div className={styles['tag__item-box-tag']}>
@@ -26,10 +29,10 @@ const TagFilter = () => {
 							<p className={styles['tag__item-items']}>{tag.attributes.posts.data.length}</p>
                             </div>
 						</div>
-					</li>
+					</li></Link>
 				))}
 			</ul>
-		</div>
+		</Card>
 	)
 }
 
