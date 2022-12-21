@@ -1,6 +1,7 @@
 import styles from './Home.module.scss'
 import PostList from '../../components/post-list/PostList'
 import Wrapper from '../../components/UI/wrapper/Wrapper'
+import { useAllPosts } from '../../hooks/useAllPosts'
 
 
 
