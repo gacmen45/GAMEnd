@@ -26,7 +26,7 @@ const handleView = () => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
-console.log(data)
+// console.log(data)
     
 	// const postAmount = (data.posts.data.map(post=>post.id)).length //to props
 

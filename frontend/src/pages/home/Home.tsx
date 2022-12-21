@@ -2,6 +2,7 @@ import styles from './Home.module.scss'
 import PostList from '../../components/post-list/PostList'
 import Wrapper from '../../components/UI/wrapper/Wrapper'
 import { useAllPosts } from '../../hooks/useAllPosts'
+import RandomPost from '../../components/random-post/RandomPost'
 
 const Home = () => {
 	const { loading, error, data } = useAllPosts()
@@ -14,6 +15,7 @@ const Home = () => {
 
 	return (
 		<Wrapper className={styles.container}>
+			<RandomPost/>
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} />
 		</Wrapper>
 	)
