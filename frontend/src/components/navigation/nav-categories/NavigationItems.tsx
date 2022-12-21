@@ -1,25 +1,11 @@
 import styles from './NavigationItems.module.scss'
-
-import { gql,useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
+import { useCategory } from '../../../hooks/useCategory'
 
-const CATEGORIES = gql`
-query GetCategories{
-categories{
-  data{
-    id
-attributes{
-  name
-}
-  }
-}
-}
-`
 
-// const categories = ['Frontend', 'Gry']
 
 const NavigationItems = () => {
-	const { loading, error, data } = useQuery(CATEGORIES)
+	const { loading, error, data } = useCategory()
 
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
