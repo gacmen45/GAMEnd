@@ -1,8 +1,8 @@
 import { useQuery, gql } from '@apollo/client'
 
-const TAGS = gql`
-	query getTags {
-		tags {
+const GAMES = gql`
+	query getGames {
+		games {
 			data {
 				id
 				attributes {
@@ -25,8 +25,7 @@ const TAGS = gql`
 	}
 `
 
-export const useTags = () => {
-	const { loading, error, data } = useQuery(TAGS)
-
+export const useGames = () => {
+	const { loading, error, data } = useQuery(GAMES)
 	return { error, data, loading }
 }

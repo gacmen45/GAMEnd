@@ -1,7 +1,7 @@
 import styles from './Footer.module.scss'
 import gacmen from '../../assets/logo.png'
-import Header from '../header/Header'
-import Social from '../social/Social'
+import Header from '../../header/Header'
+import Social from '../../social/Social'
 
 const Footer = () => {
 	return (

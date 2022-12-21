@@ -3,7 +3,8 @@ import PostList from '../../components/post-list/PostList'
 import Wrapper from '../../components/UI/wrapper/Wrapper'
 import { useAllPosts } from '../../hooks/useAllPosts'
 import RandomPost from '../../components/random-post/RandomPost'
-import TagFilter from '../../components/tag-filter/TagFilter'
+import TagFilter from '../../components/filter-list/tag-filter/TagFilter'
+import GameList from '../../components/filter-list/game-filter/GameList'
 
 const Home = () => {
 	const { loading, error, data } = useAllPosts()
@@ -15,10 +16,15 @@ const Home = () => {
 	const allPosts = data.posts.data
 
 	return (
-		<Wrapper className={styles.container}>
-			<TagFilter/>
-			<RandomPost/>
+		<Wrapper className={styles['home__container']}>
+			<div className={styles['home__filters']}>
+			<TagFilter />
+			<GameList />
+			</div>
+			<div className={styles['home__main']}>
+			<RandomPost />
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} />
+			</div>
 		</Wrapper>
 	)
 }
