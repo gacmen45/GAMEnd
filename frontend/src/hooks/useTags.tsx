@@ -28,5 +28,6 @@ const TAGS = gql`
 export const useTags = () => {
 	const { loading, error, data } = useQuery(TAGS)
 
+	console.log(data);
 	return { error, data, loading }
 }
