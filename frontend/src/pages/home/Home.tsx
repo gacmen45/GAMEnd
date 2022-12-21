@@ -16,11 +16,15 @@ const Home = () => {
 	const allPosts = data.posts.data
 
 	return (
-		<Wrapper className={styles.container}>
+		<Wrapper className={styles['home__container']}>
+			<div className={styles['home__filters']}>
 			<TagFilter />
 			<GameList />
+			</div>
+			<div className={styles['home__main']}>
 			<RandomPost />
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} />
+			</div>
 		</Wrapper>
 	)
 }

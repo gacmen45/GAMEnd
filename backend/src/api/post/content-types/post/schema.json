@@ -50,7 +50,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::game.game",
-      "inversedBy": "posts"
+      "mappedBy": "posts"
     }
   }
 }
