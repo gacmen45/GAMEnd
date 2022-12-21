@@ -9,6 +9,8 @@ const TagFilter = () => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
+    console.log(data)
+
 	return (
 		<Card className={styles['tag__container']}>
 			<h2 className={styles['tag__header']}>Sortuj według tagów:</h2>
