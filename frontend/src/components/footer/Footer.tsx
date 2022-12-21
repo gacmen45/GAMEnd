@@ -7,17 +7,13 @@ const Footer = () => {
 	return (
 		<footer>
 			<div className={styles['footer__container']}>
-			<Header />
-<Social/>
-			<div className={styles['footer__author']}>
-				<p className={styles['footer__author-text']}>
-					design by{' '}
-					<a href='https://github.com/gacmen45'>
-						{/* <img src={gacmen} alt='' /> */}
-						Marek Gacek
-					</a>
-				</p>
-			</div>
+				<Header />
+				<Social />
+				<div className={styles['footer__author']}>
+					<p className={styles['footer__author-text']}>
+						© 2023 design by <a href='https://github.com/gacmen45'>Marek Gacek</a>
+					</p>
+				</div>
 			</div>
 		</footer>
 	)
