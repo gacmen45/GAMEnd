@@ -3,12 +3,14 @@ import Card from '../UI/wrapper/Card/Card'
 import { Link } from 'react-router-dom'
 
 const FilterList = props => {
+
+
 	return (
 		<Card className={styles['filter__container']}>
 			<h2 className={styles['filter__header']}>{props.title}</h2>
 			<ul className={styles['filter__list']}>
 				{props.allItems.map(item => (
-					<Link to={`/game/${item.id}`} className={styles['filter__link']}>
+					<Link to={`/${props.direction}/${item.id}`} className={styles['filter__link']}>
 						<li className={styles['filter__item']}>
 							<div className={styles['filter__item-box']}>
 								<div className={styles['filter__item-box-tag']}>

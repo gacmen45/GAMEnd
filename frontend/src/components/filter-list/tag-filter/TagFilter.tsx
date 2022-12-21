@@ -12,9 +12,10 @@ const TagFilter = () => {
 
 	const allItems = data.tags.data
 	const title = 'Sortuj według tagów:'
+	const direction = 'tag'
 
 	return (
-		<FilterListItems title={title} allItems={allItems} />
+		<FilterListItems title={title} allItems={allItems} direction={direction} />
 		// <Card className={styles['tag-list__container']}>
 		// 	<h2 className={styles['tag-list__header']}>Sortuj według tagów:</h2>
 		// 	<ul className={styles['tag-list__list']}>

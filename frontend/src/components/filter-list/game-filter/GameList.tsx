@@ -1,4 +1,4 @@
-import { useGames } from '../../../hooks/useGame'
+import { useGames } from '../../../hooks/useGames'
 import FilterListItems from '../FilterList'
 import Card from '../../UI/wrapper/Card/Card'
 import styles from './GameList.module.scss'
@@ -11,10 +11,11 @@ const GameList = () => {
 	if (error) return <p>error...</p>
 
 	const allItems = data.games.data
-	const title = 'Gry'
+	const title = 'Gry"'
+	const direction = 'game'
 
 	return (
-		<FilterListItems title={title} allItems={allItems} />
+		<FilterListItems title={title} allItems={allItems} direction={direction} />
 		// <Card className={styles['game-list__container']}>
 		// 	<h2 className={styles['game-list__header']}>Lista Gier:</h2>
 		// 	<ul className={styles['game-list__list']} >
