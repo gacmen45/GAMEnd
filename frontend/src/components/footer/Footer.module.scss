@@ -1,4 +1,11 @@
+@import './../../assets/colors.module';
+
 .footer {
+	&__container{
+		margin-top: 5em;
+		padding: 2em;
+background-color: $secondary-color;
+	}
 	&__author {
 		display: flex;
 		justify-content: center;
