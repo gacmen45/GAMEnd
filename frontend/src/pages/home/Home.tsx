@@ -11,11 +11,8 @@ const Home = () => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
-console.log(data)
 const postAmount = (data.posts.data.map(post=>post.id)).length //to props
 const allPosts = data.posts.data
-console.log('home',postAmount)
-console.log('home',allPosts)
 
 	
 	return <Wrapper className={styles.container}>

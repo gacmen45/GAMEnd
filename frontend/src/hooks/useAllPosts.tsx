@@ -35,7 +35,6 @@ export const useAllPosts = () => {
 
     const { loading, error, data } = useQuery(POSTS)
 
-  
 
 
 

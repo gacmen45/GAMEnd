@@ -1,7 +1,6 @@
 import styles from './PostList.module.scss'
 import PostCard from '../post-card/PostCard'
 import { useState } from 'react'
-import { useAllPosts } from '../../hooks/useAllPosts'
 
 interface Post {
 	id: string

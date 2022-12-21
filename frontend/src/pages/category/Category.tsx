@@ -19,7 +19,7 @@ const Category = () => {
 	// const categoryName = data.category.data.attributes.name
 	// const allPosts = data.category.data.attributes.posts.data
 
-	return (
+	
 		// <div className={styles.test}>
 		// 	<h2>{categoryName}</h2>
 		// 	{allPosts.map(post => (
@@ -29,10 +29,23 @@ const Category = () => {
 		// 		</div>
 		// 	))}
 		// </div>
-    <Wrapper className={styles.container}>
-		<CategoryPostList/>
-    </Wrapper>
-	)
+    // <Wrapper className={styles.container}>
+	// 	<CategoryPostList/>
+    // </Wrapper>
+
+	const { loading, error, data } = useCategoryPosts()
+
+	if (loading) return <p>loading...</p>
+	if (error) return <p>error...</p>
+
+	const postAmount = data.category.data.attributes.posts.data.length
+	const allPosts = data.category.data.attributes.posts.data
+
+	return <Wrapper className={styles.container}>
+	<PostList query={useCategoryPosts} allPosts={allPosts} postAmount={postAmount}/>
+</Wrapper>
+
+	
 }
 
 export default Category
