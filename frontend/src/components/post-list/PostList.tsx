@@ -15,21 +15,21 @@ interface Post {
 	handleView:any
 }
 
-const PostList = () => {
+const PostList = (props) => {
 	const [view,setView] = useState(false)
 
 const handleView = () => {
 	setView(current=>!current)
 }
 
-	const { loading, error, data } = useAllPosts()
+	const { loading, error, data } = props.query() //to props
 
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
 console.log(data)
     
-	const postAmount = (data.posts.data.map(post=>post.id)).length
+	// const postAmount = (data.posts.data.map(post=>post.id)).length //to props
 
 	
 	return (
@@ -37,11 +37,11 @@ console.log(data)
 		<div className={styles['list__box']}>
             <div className={styles['list__header']}>
             <h3>Wszystkie posty</h3>
-            <p>{postAmount}</p>
+            <p>{props.postAmount}</p>
 			<button onClick={handleView}>change</button>
             </div>
             <div className={styles['list__items']}>
-			{data.posts.data.map((post: Post) => (
+			{props.allPosts.map((post: Post) => ( //to
 				<PostCard
 					key={post.id}
 					id={post.id}

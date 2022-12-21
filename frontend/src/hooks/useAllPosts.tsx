@@ -1,3 +1,4 @@
+
 import { useQuery, gql } from '@apollo/client'
 
 const POSTS = gql`
@@ -30,7 +31,14 @@ const POSTS = gql`
 `
 
 export const useAllPosts = () => {
+
+
     const { loading, error, data } = useQuery(POSTS)
 
+  
+
+
+
     return {error,data,loading}
+
 }
