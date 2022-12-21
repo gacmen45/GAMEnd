@@ -6,6 +6,7 @@ import Category from './pages/category/Category'
 import { Routes, Route,BrowserRouter } from 'react-router-dom'
 import { ApolloClient,InMemoryCache,ApolloProvider } from '@apollo/client'
 import Post from './pages/post/Post'
+import Footer from './components/footer/Footer'
 
 const client = new ApolloClient({
    uri: 'http://localhost:1337/graphql',
@@ -26,6 +27,7 @@ function App() {
 			</Routes>
 		</div>
       </ApolloProvider>
+      <Footer/>
          </BrowserRouter>
 	)
 }
