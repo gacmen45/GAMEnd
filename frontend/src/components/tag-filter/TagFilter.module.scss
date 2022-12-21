@@ -1,0 +1,43 @@
+@import './../../assets/colors.module';
+
+.tag {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid red;
+		border-radius: 20px;
+		background-color: $secondary-color;
+		color: $primary-font-color;
+		padding: 2em;
+	}
+	&__header {
+		text-transform: uppercase;
+	}
+	&__list {
+		list-style: none;
+	}
+	&__item {
+		&-box {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1em;
+			border: 1px solid white;
+            cursor: pointer;
+			&-tag {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+		&-img {
+			width: 30px;
+		}
+		&-title {
+			margin-left: 0.5em;
+		}
+		&-items {
+			align-self: end;
+		}
+	}
+}

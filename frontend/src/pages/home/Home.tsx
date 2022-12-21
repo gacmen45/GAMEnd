@@ -3,6 +3,7 @@ import PostList from '../../components/post-list/PostList'
 import Wrapper from '../../components/UI/wrapper/Wrapper'
 import { useAllPosts } from '../../hooks/useAllPosts'
 import RandomPost from '../../components/random-post/RandomPost'
+import TagFilter from '../../components/tag-filter/TagFilter'
 
 const Home = () => {
 	const { loading, error, data } = useAllPosts()
@@ -15,6 +16,7 @@ const Home = () => {
 
 	return (
 		<Wrapper className={styles.container}>
+			<TagFilter/>
 			<RandomPost/>
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} />
 		</Wrapper>

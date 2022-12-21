@@ -39,6 +39,12 @@
       "relation": "manyToMany",
       "target": "api::author.author",
       "inversedBy": "posts"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "posts"
     }
   }
 }
