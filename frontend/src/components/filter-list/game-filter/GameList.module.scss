@@ -1,0 +1,14 @@
+.game-list {
+	&__container {
+        margin: 1em;
+	}
+	&__header {
+		text-transform: uppercase;
+	}
+	&__list {
+		list-style: none;
+	}
+	&__link {
+		text-decoration: none;
+	}
+}

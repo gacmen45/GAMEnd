@@ -1,13 +1,8 @@
 @import './../../assets/colors.module';
 
-.tag {
+.filter {
 	
-	&__header {
-		text-transform: uppercase;
-	}
-	&__list {
-		list-style: none;
-	}
+	
 	&__item {
 		cursor: pointer;
 		padding: .5em;
