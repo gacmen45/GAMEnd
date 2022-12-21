@@ -1,0 +1,29 @@
+@import './../../assets/colors.module';
+
+.footer {
+	&__container{
+		margin-top: 5em;
+		padding: 1em;
+background-color: $secondary-color;
+	}
+	&__author {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&-text {
+			margin-top: 0;
+			padding: 0 1em 1em;
+			font-size: 1rem;
+			text-align: center;
+			a {
+				color: #6fdfdf;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			img {
+				width: 35px;
+			}
+		}
+	}
+}
