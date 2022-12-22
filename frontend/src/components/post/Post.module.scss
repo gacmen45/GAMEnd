@@ -1,0 +1,47 @@
+@import './../../assets/colors.module';
+.post {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__heroimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em;
+		img {
+			width: 80%;
+		}
+       
+	}
+    &__header{
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__text{
+        display: flex;
+        margin: 1em;
+        font-style: italic;
+        &-author{
+            margin-right: 1em;
+            color:$secondary-font-color;
+            cursor: pointer;
+
+        }
+    }
+    &__link{
+        text-decoration: none;
+        color: white;
+    }
+}
+
+
+.test{
+    max-width: 1000px;
+    img{
+        max-width: 100%;
+    }
+}
