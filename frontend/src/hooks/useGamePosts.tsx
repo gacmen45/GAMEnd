@@ -15,6 +15,13 @@ const GAME = gql`
 								title
 								content
 								publishedAt
+								authors {
+									data {
+										attributes {
+											author
+										}
+									}
+								}
 								categories {
 									data {
 										attributes {
