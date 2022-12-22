@@ -11,7 +11,7 @@ const TagFilter = () => {
 	if (error) return <p>error...</p>
 
 	const allItems = data.tags.data
-	const title = 'Sortuj według tagów:'
+	const title = 'Kategorie:'
 	const direction = 'tag'
 
 	return (

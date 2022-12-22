@@ -11,7 +11,7 @@ const GameList = () => {
 	if (error) return <p>error...</p>
 
 	const allItems = data.games.data
-	const title = 'Gry"'
+	const title = 'Gry:'
 	const direction = 'game'
 
 	return (
