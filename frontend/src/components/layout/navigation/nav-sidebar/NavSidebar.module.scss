@@ -1,4 +1,4 @@
-@import './../../../assets/colors.module';
+@import './../../../../assets/colors.module';
 
 .sidebar {
 	position: absolute;
@@ -11,7 +11,6 @@
 	transform: translateX(400px);
 	transition: transform 0.8s;
 }
-
 .active {
 	transform: translateX(0);
 }

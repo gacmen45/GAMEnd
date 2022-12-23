@@ -1,6 +1,6 @@
 import { useGames } from '../../../hooks/useGames'
 import FilterListItems from '../FilterList'
-import Card from '../../UI/wrapper/Card/Card'
+import Card from '../../UI/card/Card'
 import styles from './GameList.module.scss'
 import { Link } from 'react-router-dom'
 

@@ -9,7 +9,7 @@ const Header = () => {
     <Link to={'/'} style={{ textDecoration: 'none' }}>
     <div className={styles['header__container']}>
     <img src={logo} alt='logo strony' className={styles['header__logo']} />
-    <h1 className={styles['header__heading']}>GAMEnd</h1>
+    <h1 className={styles['header__heading']}>game-end</h1>
     </div>
 </Link>)
 }
