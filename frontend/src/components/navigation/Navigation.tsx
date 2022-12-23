@@ -1,10 +1,10 @@
-import NavigationHeader from './nav-header/NavigationHeader'
-import MobileNavigation from './nav-mobile/MobileNavigation'
+import NavBar from './nav-bar/NavBar'
+import NavSidebar from './nav-sidebar/NavSidebar'
 import { Spin as Hamburger } from 'hamburger-react'
+import Social from '../social/Social'
 
-
-import classes from './Navigation.module.scss'
-import { useState,useEffect } from 'react'
+import styles from './Navigation.module.scss'
+import { useState, useEffect } from 'react'
 
 const Navigation = () => {
 	const [isOpen, setOpen] = useState(false)
@@ -15,12 +15,12 @@ const Navigation = () => {
 	}, [])
 
 	return (
-		<nav className={classes.nav}>
-			<div className={classes['nav__container']}>
-				<NavigationHeader/>
-
-				{!matchesMD &&<Hamburger toggled={isOpen} toggle={setOpen} />}
-				{!matchesMD && <MobileNavigation mobileNav={isOpen} />}
+		<nav className={styles.nav}>
+			<div className={styles['nav__container']}>
+				<NavBar />
+				{matchesMD &&<Social className={styles['nav__social']} />}
+				{!matchesMD && <Hamburger toggled={isOpen} toggle={setOpen} />}
+				{!matchesMD && <NavSidebar mobileNav={isOpen} />}
 			</div>
 		</nav>
 	)

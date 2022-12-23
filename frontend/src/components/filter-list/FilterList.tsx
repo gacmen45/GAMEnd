@@ -1,10 +1,8 @@
 import styles from './FilterList.module.scss'
-import Card from '../UI/wrapper/Card/Card'
+import Card from '../UI/Card/Card'
 import { Link } from 'react-router-dom'
 
 const FilterList = props => {
-
-
 	return (
 		<Card className={styles['filter__container']}>
 			<h2 className={styles['filter__header']}>{props.title}</h2>

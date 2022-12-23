@@ -7,7 +7,7 @@
 	margin: 1em 1.5em;
 	text-transform: uppercase;
 	font-weight: bold;
-	@media (min-width: 768px){
+	@media (min-width: 768px) {
 		margin: 0;
 	}
 
@@ -17,6 +17,10 @@
 		@media (min-width: 768px) {
 			display: flex;
 			flex-direction: row;
+		}
+		hr {
+			margin: 1em;
+			border-color: $secondary-font-color;
 		}
 	}
 	&__item {
@@ -30,13 +34,17 @@
 			padding: 0.5em 1em;
 			margin: 0 1em;
 		}
+		&-icon {
+			margin-right: 0.4em;
+		}
+
 		&:hover {
 			background-color: $primary-color;
 			color: $secondary-font-color;
 			box-shadow: 2px 2px 10px $primary-color;
 		}
 	}
-	&__link{
+	&__link {
 		text-decoration: none;
 	}
 }
