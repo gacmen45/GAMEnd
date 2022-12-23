@@ -1,6 +1,6 @@
 import styles from './TagFilter.module.scss'
 import { useTags } from '../../../hooks/useTags'
-import Card from '../../UI/Card/Card'
+import Card from '../../UI/card/Card'
 import { Link } from 'react-router-dom'
 import FilterListItems from '../FilterList'
 

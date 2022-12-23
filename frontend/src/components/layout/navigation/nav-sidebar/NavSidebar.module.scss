@@ -1,4 +1,4 @@
-@import './../../../assets/colors.module';
+@import './../../../../assets/colors.module';
 
 .sidebar {
 	position: absolute;
@@ -10,12 +10,7 @@
 	background-color: $secondary-color;
 	transform: translateX(400px);
 	transition: transform 0.8s;
-
-	
-		
-	
 }
-
 .active {
 	transform: translateX(0);
 }

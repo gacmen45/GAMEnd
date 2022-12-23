@@ -1,0 +1,21 @@
+@import './../../../assets/colors.module';
+
+.nav {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	background-color: $secondary-color;
+	color: $secondary-font-color;
+	z-index: 1000;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 0;
+		padding: 0 1em;
+	}
+	&__social {
+		font-size: 1.6rem;
+	}
+}

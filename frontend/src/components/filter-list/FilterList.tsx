@@ -1,5 +1,5 @@
 import styles from './FilterList.module.scss'
-import Card from '../UI/Card/Card'
+import Card from '../UI/card/Card'
 import { Link } from 'react-router-dom'
 
 const FilterList = props => {

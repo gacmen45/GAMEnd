@@ -1,0 +1,11 @@
+@import './../../../../assets/colors.module';
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: .7em;
+	&-link {
+		text-decoration: none;
+	}
+}
