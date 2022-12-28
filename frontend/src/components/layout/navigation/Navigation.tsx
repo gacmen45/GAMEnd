@@ -16,6 +16,9 @@ const Navigation = (props) => {
 		window.matchMedia('(min-width: 768px)').addEventListener('change', e => setMatchesMD(e.matches))
 	}, [])
 
+	const closeNavHandler=()=>{
+		setOpen(false)
+	}
 	
 	return (
 		<nav className={styles.nav}>
@@ -23,7 +26,7 @@ const Navigation = (props) => {
 				<NavBar />
 				{matches && <Social className={styles['nav__social']} />}
 				{!matches && <Hamburger toggled={isOpen} toggle={setOpen} />}
-				{!matches && <NavSidebar mobileNav={isOpen} onShowGameList={props.onShowGameList} onShowTagFilter={props.onShowTagFilter}/> }
+				{!matches && <NavSidebar mobileNav={isOpen} onCloseHandler={closeNavHandler} onShowGameList={props.onShowGameList} onShowTagFilter={props.onShowTagFilter}/> }
 			</Wrapper>
 		</nav>
 	)
