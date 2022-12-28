@@ -1,26 +1,22 @@
-import { useGames } from '../../hooks/useGames'
-import FilterListItems from '../../components/filter-list/FilterList'
-import Card from '../../components/UI/card/Card'
-import styles from './GameList.module.scss'
-import { Link } from 'react-router-dom'
-import Modal from '../UI/modal/Modal'
-import GameList from '../filter-list/game-filter/GameList'
+import Modal from './../../components/UI/modal/Modal'
+// import TagFilter from './TagFilter'
+import styles from './ModalCard.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faX } from '@fortawesome/free-solid-svg-icons'
 
-const ModalCard = (props) => {
-	const { loading, error, data } = useGames()
+const close = <FontAwesomeIcon icon={faX} className={styles['btn-icon']} />
 
-	// if (loading) return <p>loading...</p>
-	// if (error) return <p>error...</p>
-
-	// const allItems = data.games.data
-	// const title = 'Bilbioteka Gier:'
-	// const direction = 'game'
-
+const ModalCard = props => {
 	return (
-    <Modal onHideModal={props.onHideModal}>
-        <button onClick={props.onHideModal}>x</button>
-		{props.content}
-        </Modal>
+		<Modal onHideModal={props.onHideModal}>
+			<div className={styles.box}>
+				<button className={styles.btn}  onClick={props.onHideModal}>
+					{close}
+				</button>
+			</div>
+
+			{props.content}
+		</Modal>
 	)
 }
 export default ModalCard

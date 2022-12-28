@@ -8,6 +8,7 @@
 	&__header {
 		text-transform: uppercase;
 		text-align: center;
+		color: $secondary-font-color;
 	}
 	&__list {
 		list-style: none;
@@ -38,6 +39,7 @@
 		}
 		&-title {
 			margin-left: 0.5em;
+			
 		}
 		&-items {
 			font-weight: bold;
