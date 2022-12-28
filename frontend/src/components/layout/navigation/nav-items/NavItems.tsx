@@ -41,8 +41,8 @@ const NavItems = (props: Props) => {
 				{!props.matches && (
 					<div>
 						<hr />
-						<li onClick={props.onShowModal}  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
-						<li  className={styles['items__item']}>{tagIcon}Lista tagów</li>
+						<li onClick={props.onShowGameList}  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
+						<li onClick ={props.onShowTagFilter}  className={styles['items__item']}>{tagIcon}Lista tagów</li>
 					</div>
 				)}
 			</ul>

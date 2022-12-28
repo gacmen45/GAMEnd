@@ -11,7 +11,7 @@ interface Props {
 const NavSidebar = (props: Props) => {
 	return (
 		<div className={`${styles.sidebar} ${props.mobileNav ? styles.active : ''}`}>
-			<NavItems matches={false} onShowModal={props.onShowModal}/>
+			<NavItems matches={false} onShowGameList={props.onShowGameList} onShowTagFilter={props.onShowTagFilter} />
 			<Social className={''}/>
 		</div>
 	)
