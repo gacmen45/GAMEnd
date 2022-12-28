@@ -20,6 +20,7 @@ interface Props{
 	query:any,
 	allPosts:any,
 	postAmount:number,
+	matches:boolean
 }
 
 const PostList = (props:Props) => {
@@ -44,7 +45,7 @@ const handleView = () => {
 				<h3>Wszystkie posty</h3>
 				<p>{props.postAmount}</p>
 				</div>
-			<button className={styles['list__btn']} onClick={handleView}>{grid}</button>
+			{props.matches &&<button className={styles['list__btn']} onClick={handleView}>{grid}</button>}
             </div>
             <div className={styles['list__items']}>
 			{props.allPosts.map((post: Post) => ( //to

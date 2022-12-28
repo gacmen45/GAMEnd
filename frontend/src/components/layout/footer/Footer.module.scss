@@ -2,9 +2,10 @@
 
 .footer {
 	&__container {
-		margin-top: 7.2em;
 		padding: 1em;
+		margin-top: 7.2em;
 		background-color: $secondary-color;
+
 	}
 	&__author {
 		display: flex;

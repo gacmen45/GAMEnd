@@ -1,13 +1,28 @@
-import styles from './FilterList.module.scss'
-import Card from '../UI/card/Card'
 import { Link } from 'react-router-dom'
 
-const FilterList = props => {
+import Card from '../UI/card/Card'
+
+import styles from './FilterList.module.scss'
+
+interface Props {
+	title: string
+	direction: string
+	allItems:any
+}
+
+interface Item {
+	id: string
+	attributes: any
+}
+
+const FilterList = (props:Props) => {
+
+
 	return (
 		<Card className={styles['filter__container']}>
 			<h2 className={styles['filter__header']}>{props.title}</h2>
 			<ul className={styles['filter__list']}>
-				{props.allItems.map(item => (
+				{props.allItems.map((item: Item) => (
 					<Link to={`/${props.direction}/${item.id}`} className={styles['filter__link']}>
 						<li className={styles['filter__item']}>
 							<div className={styles['filter__item-box']}>
@@ -20,7 +35,7 @@ const FilterList = props => {
 									<h3 className={styles['filter__item-title']}>{item.attributes.title}</h3>
 								</div>
 								<div>
-									<p className={styles['filter__item-items']}>{item.attributes.posts.data.length}</p>
+								{item.attributes.posts.data.length>1 &&<p className={styles['filter__item-items']}>{item.attributes.posts.data.length}</p>}
 								</div>
 							</div>
 						</li>
