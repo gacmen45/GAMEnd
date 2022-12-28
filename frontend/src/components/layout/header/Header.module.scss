@@ -1,0 +1,21 @@
+@import './../../../styles/colors.module';
+
+.header {
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__logo {
+		width: 40px;
+		margin-right: 0.5em;
+	}
+	&__heading {
+		font-size: 1.6rem;
+		margin-right: 1em;
+		color: $secondary-font-color;
+	}
+	&__link {
+		text-decoration: none;
+	}
+}

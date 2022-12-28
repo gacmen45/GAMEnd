@@ -1,10 +1,10 @@
-@import './../../../assets/colors.module';
+@import './../../../styles/colors.module';
 
 .footer {
-	&__container{
+	&__container {
 		margin-top: 5em;
 		padding: 1em;
-background-color: $secondary-color;
+		background-color: $secondary-color;
 	}
 	&__author {
 		display: flex;

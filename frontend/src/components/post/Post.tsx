@@ -3,38 +3,21 @@ import styles from './Post.module.scss'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import Wrapper from '../../components/UI/wrapper/Wrapper'
 import remarkBreaks from 'remark-breaks'
-import { usePost } from '../../hooks/usePost'
 
+interface Props{
+	header:string,
+	author:string,
+	date:string,
+	content:string,
+}
 
-
-const Post = (props) => {
-	
-
-	// const {loading,error,data}= props.query()
-
-	// if (loading) return <p>loading...</p>
-	// if (error) return <p>error...</p>
-
+const Post = (props:Props) => {
 const header = props.header
 const heroImg = `http://localhost:1337${props.heroImg}`
 const author = props.author
 const date = new Date(props.date).toLocaleDateString('pl-PL')
 const content = (props.content).replace(/\n/gi, '&nbsp; \n')
 
-
-
-	// const header = data.post.data.attributes.title
-	// const heroImg = `http://localhost:1337${data.post.data.attributes.image.data.attributes.url}`
-	// const date = new Date(data.post.data.attributes.publishedAt).toLocaleDateString('pl-PL')
-	// const content = data.post.data.attributes.content.replace(/\n/gi, '&nbsp; \n')
-	// const author = data.post.data.attributes.authors.data.map(author=>author.attributes.author)
-
-
-
-	// const category = data.post.data.attributes.categories.data.map(category => category.attributes.name)
-	// const categoryId = data.post.data.attributes.categories.data.map(category => category.id)
-
-	
 	return (
 		<Wrapper className={styles['post__container']}>
 			<div className={styles['post__heroimg']}>

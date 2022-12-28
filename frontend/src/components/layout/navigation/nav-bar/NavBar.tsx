@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import NavItems from '../nav-items/NavItems'
-import Header from '../../../header/Header'
+import Header from '../../header/Header'
 
 import styles from './NavBar.module.scss'
 
@@ -14,7 +14,7 @@ const NavBar = () => {
 
 	return (
 		<div className={styles.navbar}>
-				<Header />
+			<Header />
 			{matches && <NavItems matches={matches} />}
 		</div>
 	)

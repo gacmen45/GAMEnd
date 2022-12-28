@@ -3,7 +3,7 @@ import { Spin as Hamburger } from 'hamburger-react'
 
 import NavBar from './nav-bar/NavBar'
 import NavSidebar from './nav-sidebar/NavSidebar'
-import Social from '../../social/Social'
+import Social from '../social/Social'
 import Wrapper from '../../UI/wrapper/Wrapper'
 
 import styles from './Navigation.module.scss'

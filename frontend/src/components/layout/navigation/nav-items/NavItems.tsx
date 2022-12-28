@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGamepad, faTag } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './NavItems.module.scss'
+import { useState } from 'react'
 
 interface Props {
 	matches: boolean
@@ -18,6 +19,9 @@ const gamepadIcon = <FontAwesomeIcon icon={faGamepad} className={styles['items__
 const tagIcon = <FontAwesomeIcon icon={faTag} className={styles['items__item-icon']} />
 
 const NavItems = (props: Props) => {
+	
+
+
 	const { loading, error, data } = useCategory()
 
 	if (loading) return <p>loading...</p>
@@ -36,8 +40,8 @@ const NavItems = (props: Props) => {
 				{!props.matches && (
 					<div>
 						<hr />
-						<li className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
-						<li className={styles['items__item']}>{tagIcon}Lista tagów</li>
+						<li  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
+						<li  className={styles['items__item']}>{tagIcon}Lista tagów</li>
 					</div>
 				)}
 			</ul>

@@ -1,10 +1,11 @@
-@import './../../assets/colors.module';
+@import './../../styles/colors.module';
 .post {
 	&__container {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+        padding:2em
 	}
 	&__heroimg {
         display: flex;
@@ -28,8 +29,6 @@
         &-author{
             margin-right: 1em;
             color:$secondary-font-color;
-            cursor: pointer;
-
         }
     }
     &__link{

@@ -1,35 +1,44 @@
-import styles from './PostCard.module.scss'
 import { Link } from 'react-router-dom'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
-interface Props{
-    id:string;
-    title:string;
-    content:string;
-    publishedAt:string;
-	image:string
-	categories:string
-    }
+import Card from '../UI/card/Card'
 
+import styles from './PostCard.module.scss'
 
-const PostCard = (props:Props) => {
+interface Props {
+	id: string
+	title: string
+	content: string
+	publishedAt: string
+	image: string
+	categories: string
+	className: string
+	handleView: Boolean
+}
+
+const PostCard = (props: Props) => {
 	const image = `http://localhost:1337${props.image}`
 	const date = new Date(props.publishedAt).toLocaleDateString('pl-PL')
-const description = `${props.content.substring(0,200)}...`
-	
-const splitClass = `${styles['card__box']} ${props.className}`
+	const description = `${props.content.substring(0, 100)}...`
+
+	const splitClass = `${styles['card__box']} ${props.className}`
 	return (
-		<div key={props.id} className={`${splitClass} ${props.handleView?styles.test:''}`}>
+		<Card key={props.id} className={`${splitClass} ${props.handleView ? styles.test : ''}`}>
 			<Link to={`/post/${props.id}`} className={styles['card__link']}>
 				<div className={styles['card__img']}>
-			<img  src={image} alt="" />
-			</div>
-			<h3 className={styles['card__title']}>{props.title}</h3>
-			<ReactMarkdown className={styles['card__content']}>{description}</ReactMarkdown>
-			<p className={styles['card__publishedAt']}>{date}</p>
-			<p className={styles['card__category']}>{props.categories}</p>
-		</Link>
-		</div>
+					<img src={image} alt='' />
+				</div>
+				<div className={styles['card__text']}>
+				<h3 className={styles['card__text-title']}>{props.title}</h3>
+				<hr />
+				<ReactMarkdown className={styles['card__text-content']}>{description}</ReactMarkdown>
+				<div className={styles['card__text-bottom']}>
+				<p className={styles['card__text-bottom-publishedAt']}>{date}</p>
+				<p className={styles['card__text-bottom-category']}>{props.categories}</p>
+				</div>
+				</div>
+			</Link>
+		</Card>
 	)
 }
 

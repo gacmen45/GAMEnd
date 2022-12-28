@@ -1,24 +1,59 @@
+@import './../../styles/mixin.module';
+@import './../../styles/colors.module';
+
 .list {
 	&__box {
 		display: flex;
-        flex-direction: column;
+		flex-direction: column;
 	}
 	&__header {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 1em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em;
+		margin: 0 3em;
 
+		@media (min-width: 768px) {
 		}
+		&-post {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			h3 {
+				margin-right: 0.5em;
+			}
+			p {
+				color: #b5bdc1;
+			}
+		}
+	}
+	&__btn {
+		margin-left: 1em;
+		padding: 1em;
+		background: none;
+		border: 1px solid transparent;
+		cursor: pointer;
+		border-radius: 20px;
+		transition: all 0.6s;
+		&-icon {
+			color: $primary-font-color;
+			text-align: center;
+			font-size: 1.4rem;
+		}
+		&:hover {
+			background-color: $primary-color;
+			color: $secondary-font-color;
+			box-shadow: 2px 2px 15px black;
+		}
+		&:hover .list__btn-icon {
+			color: $secondary-font-color;
+		}
+	}
 
-	
-    &__items{
-        display: flex;
-
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 2em;
-
-    }
+	&__items {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+	}
 }
