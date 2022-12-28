@@ -9,6 +9,7 @@ import Post from './pages/post/Post'
 import Footer from './components/layout/footer/Footer'
 import Tag from './pages/tag/Tag'
 import Game from './pages/game/Game'
+import Test from './components/test/Test'
 
 const client = new ApolloClient({
 	uri: 'http://localhost:1337/graphql',
@@ -28,6 +29,7 @@ function App() {
 						<Route path='/game/:id' element={<Game />} />
 						<Route path='/post/:id' element={<Post />} />
 					</Routes>
+					<Test/>
 				</div>
 			</ApolloProvider>
 			<Footer />
