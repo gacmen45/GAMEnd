@@ -12,7 +12,7 @@ const RandomPost = () => {
 	const randomPost = data.posts.data[randomNumber]
 
 	return (
-		<div className={styles['random__container']}>
+		 <div className={styles['random__container']}>
 			<PostCard className={styles['random__post']}
 				key={randomPost.id}
 				id={randomPost.id}
@@ -22,7 +22,7 @@ const RandomPost = () => {
 				image={randomPost.attributes.image.data.attributes.url}
 				categories={randomPost.attributes.categories.data.map((category: Post) => category.attributes.name)}
 			/>
-		</div>
+		 </div> 
 	)
 }
 

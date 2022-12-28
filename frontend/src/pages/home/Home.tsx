@@ -35,7 +35,7 @@ const Home = () => {
 			{matches &&<GameList />}
 			</div>
 			<div className={styles['home__main']}>
-			<RandomPost />
+			{/* <RandomPost /> */}
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} />
 			</div>
 		</Wrapper>
