@@ -10,6 +10,7 @@ import Footer from './components/layout/footer/Footer'
 import Tag from './pages/tag/Tag'
 import Game from './pages/game/Game'
 import Test from './components/test/Test'
+import { useState } from 'react'
 
 const client = new ApolloClient({
 	uri: 'http://localhost:1337/graphql',
@@ -17,11 +18,20 @@ const client = new ApolloClient({
 })
 
 function App() {
+const [modalIsShown,setModalIsShown] = useState(false)
+
+const showModalHandler = () =>{
+	setModalIsShown(true)
+}
+const hideModalHandler = () =>{
+	setModalIsShown(false)
+}
+
 	return (
 		<BrowserRouter>
 			<ApolloProvider client={client}>
 				<div>
-					<Navigation />
+					<Navigation onShowModal={showModalHandler}/>
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/category/:id' element={<Category />} />
@@ -29,7 +39,7 @@ function App() {
 						<Route path='/game/:id' element={<Game />} />
 						<Route path='/post/:id' element={<Post />} />
 					</Routes>
-					<Test/>
+					{modalIsShown && <Test onHideModal={hideModalHandler}/>}
 				</div>
 			</ApolloProvider>
 			<Footer />

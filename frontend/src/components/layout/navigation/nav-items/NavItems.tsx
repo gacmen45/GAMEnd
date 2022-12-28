@@ -5,6 +5,7 @@ import { faGamepad, faTag } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './NavItems.module.scss'
 import { useState } from 'react'
+import Test from '../../../test/Test'
 
 interface Props {
 	matches: boolean
@@ -40,7 +41,7 @@ const NavItems = (props: Props) => {
 				{!props.matches && (
 					<div>
 						<hr />
-						<li  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
+						<li onClick={props.onShowModal}  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
 						<li  className={styles['items__item']}>{tagIcon}Lista tagów</li>
 					</div>
 				)}

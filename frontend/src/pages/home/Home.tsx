@@ -8,6 +8,7 @@ import TagFilter from '../../components/filter-list/tag-filter/TagFilter'
 import GameList from '../../components/filter-list/game-filter/GameList'
 
 import styles from './Home.module.scss'
+import Test from '../../components/test/Test'
 
 interface Post {
 	id:string
