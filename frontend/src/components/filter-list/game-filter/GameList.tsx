@@ -4,7 +4,7 @@ import Card from '../../UI/card/Card'
 import styles from './GameList.module.scss'
 import { Link } from 'react-router-dom'
 
-const GameList = () => {
+const GameList = (props) => {
 	const { loading, error, data } = useGames()
 
 	if (loading) return <p>loading...</p>
@@ -15,7 +15,7 @@ const GameList = () => {
 	const direction = 'game'
 
 	return (
-		<FilterListItems title={title} allItems={allItems} direction={direction} />
+		<FilterListItems title={title} allItems={allItems} direction={direction} onHideModal={props.onHideModal} />
 	)
 }
 export default GameList
