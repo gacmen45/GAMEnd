@@ -5,6 +5,7 @@ import { faGamepad, faTag } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './NavItems.module.scss'
 import { useState } from 'react'
+import Test from '../../../test/Test'
 
 interface Props {
 	matches: boolean
@@ -27,12 +28,29 @@ const NavItems = (props: Props) => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
+const showGamesList = ()=>{
+	props.onCloseHandler()
+	props.onShowGameList()
+}
+const showTagFilter = () => {
+	props.onCloseHandler()
+	props.onShowTagFilter()
+}
+
+const closeHandler =() =>{
+	props.onCloseHandler()
+	props.onHideGameModal()
+	props.onHideTagModal()
+}
+
+console.log(props.onHideTagModal);
+
 	return (
 		<div className={styles.items}>
 			<ul className={styles['items__list']}>
 				{data.categories.data.map((category: Category) => (
 					<Link to={`/category/${category.id}`} className={styles['items__link']} key={category.id}>
-						<li key={category.id} className={styles['items__item']}>
+						<li key={category.id} className={styles['items__item']} onClick={closeHandler}>
 							{category.attributes.name}
 						</li>
 					</Link>
@@ -40,8 +58,8 @@ const NavItems = (props: Props) => {
 				{!props.matches && (
 					<div>
 						<hr />
-						<li  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
-						<li  className={styles['items__item']}>{tagIcon}Lista tagów</li>
+						<li onClick={showGamesList}  className={styles['items__item']}>{gamepadIcon}Biblioteka Gier</li>
+						<li onClick ={showTagFilter}  className={styles['items__item']}>{tagIcon}Lista tagów</li>
 					</div>
 				)}
 			</ul>

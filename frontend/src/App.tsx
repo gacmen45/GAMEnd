@@ -9,6 +9,10 @@ import Post from './pages/post/Post'
 import Footer from './components/layout/footer/Footer'
 import Tag from './pages/tag/Tag'
 import Game from './pages/game/Game'
+import { useState } from 'react'
+import ModalCard from './components/modal-card/ModalCard'
+import GameList from './components/filter-list/game-filter/GameList'
+import TagFilter from './components/filter-list/tag-filter/TagFilter'
 
 const client = new ApolloClient({
 	uri: 'http://localhost:1337/graphql',
@@ -16,11 +20,30 @@ const client = new ApolloClient({
 })
 
 function App() {
+	const [gameListModal, setGameListModal] = useState(false)
+	const [tagFilterModal, setTagFilterModal] = useState(false)
+
+	const showGameListHandler = () => {
+		setTagFilterModal(false)
+		setGameListModal(true)
+	}
+	const hideGameListHandler = () => {
+		setGameListModal(false)
+	}
+	const showTagFilterHandler = () => {
+		setGameListModal(false)
+		setTagFilterModal(true)
+	}
+	const hideTagFilterModal =() => {
+		setTagFilterModal(false)
+	}
+	
+
 	return (
 		<BrowserRouter>
 			<ApolloProvider client={client}>
 				<div>
-					<Navigation />
+					<Navigation onShowGameList={showGameListHandler} onShowTagFilter={showTagFilterHandler} onHideGameModal={hideGameListHandler} onHideTagModal={hideTagFilterModal}/>
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/category/:id' element={<Category />} />
@@ -28,6 +51,8 @@ function App() {
 						<Route path='/game/:id' element={<Game />} />
 						<Route path='/post/:id' element={<Post />} />
 					</Routes>
+{gameListModal && <ModalCard content={<GameList onHideModal={hideGameListHandler}/>} onHideModal={hideGameListHandler}/>}
+{tagFilterModal && <ModalCard content={<TagFilter onHideModal={hideTagFilterModal}/>} onHideModal={hideTagFilterModal}/>}
 				</div>
 			</ApolloProvider>
 			<Footer />

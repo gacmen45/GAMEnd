@@ -8,7 +8,7 @@ import Wrapper from '../../UI/wrapper/Wrapper'
 
 import styles from './Navigation.module.scss'
 
-const Navigation = () => {
+const Navigation = (props) => {
 	const [isOpen, setOpen] = useState(false)
 	const [matches, setMatchesMD] = useState(window.matchMedia('(min-width: 768px)').matches)
 
@@ -16,13 +16,17 @@ const Navigation = () => {
 		window.matchMedia('(min-width: 768px)').addEventListener('change', e => setMatchesMD(e.matches))
 	}, [])
 
+	const closeNavHandler=()=>{
+		setOpen(false)
+	}
+	
 	return (
 		<nav className={styles.nav}>
 			<Wrapper className={styles['nav__container']}>
 				<NavBar />
 				{matches && <Social className={styles['nav__social']} />}
 				{!matches && <Hamburger toggled={isOpen} toggle={setOpen} />}
-				{!matches && <NavSidebar mobileNav={isOpen} />}
+				{!matches && <NavSidebar mobileNav={isOpen} onCloseHandler={closeNavHandler} onShowGameList={props.onShowGameList} onShowTagFilter={props.onShowTagFilter} onHideGameModal={props.onHideGameModal} onHideTagModal={props.onHideTagModal}/> }
 			</Wrapper>
 		</nav>
 	)

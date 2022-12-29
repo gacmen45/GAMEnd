@@ -1,0 +1,30 @@
+@import './../../styles/colors.module';
+@import './../../styles/mixin.module';
+
+
+.btn{
+  padding: .5em;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: black;
+  cursor:pointer;
+  transition: .6s;
+
+  &-icon{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 15px black;
+    background-color: $third-color;
+    color: $secondary-font-color;
+}
+}
+
+.box{
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
