@@ -26,8 +26,8 @@ const PostCard = (props: Props) => {
 	return (
 		<Card key={props.id} className={`${splitClass} ${props.handleView ? styles.list : ''}`}>
 			<Link to={`/post/${props.id}`} className={styles['card__link']}>
-				<div className={styles['card__img']}>
-					<img src={image} alt='' />
+				<div className={styles['card__img']} style={{backgroundImage:`url(${image})`}}>
+					{/* <img src={image} alt='' /> */}
 				</div>
 				<div className={styles['card__text']}>
 				<h3 className={styles['card__text-title']}>{props.title}</h3>
