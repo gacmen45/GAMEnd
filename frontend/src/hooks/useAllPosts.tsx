@@ -12,6 +12,7 @@ const POSTS = gql`
         publishedAt
 		categories{
           data{
+            id
             attributes{
               name
             }

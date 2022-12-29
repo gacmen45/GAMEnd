@@ -12,6 +12,7 @@ interface Props {
 	publishedAt: string
 	image: string
 	categories: string
+	categoriesId:string
 	className: string
 	handleView: Boolean
 }
@@ -34,7 +35,8 @@ const PostCard = (props: Props) => {
 				<ReactMarkdown className={styles['card__text-content']}>{description}</ReactMarkdown>
 				<div className={styles['card__text-bottom']}>
 				<p className={styles['card__text-bottom-publishedAt']}>{date}</p>
-				<p className={styles['card__text-bottom-category']}>{props.categories}</p>
+				<Link to={`/category/${props.categoriesId}`} className={styles['card__link']}><button className={styles['card__text-bottom-btn']}>{props.categories}</button></Link>
+				{/* <p className={styles['card__text-bottom-category']}>{props.categories}</p> */}
 				</div>
 				</div>
 			</Link>

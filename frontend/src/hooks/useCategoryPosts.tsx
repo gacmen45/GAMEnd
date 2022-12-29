@@ -17,6 +17,7 @@ const CATEGORY = gql`
 								publishedAt
 								categories {
 									data {
+										id
 										attributes {
 											name
 										}
