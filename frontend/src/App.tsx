@@ -9,13 +9,10 @@ import Post from './pages/post/Post'
 import Footer from './components/layout/footer/Footer'
 import Tag from './pages/tag/Tag'
 import Game from './pages/game/Game'
-import Test from './components/test/Test'
 import { useState } from 'react'
 import ModalCard from './components/modal-card/ModalCard'
 import GameList from './components/filter-list/game-filter/GameList'
 import TagFilter from './components/filter-list/tag-filter/TagFilter'
-import GameListModal from './components/filter-list/game-filter/GameListModal'
-import TagFilterModal from './components/filter-list/tag-filter/TagFilterModal'
 
 const client = new ApolloClient({
 	uri: 'http://localhost:1337/graphql',
@@ -27,12 +24,14 @@ function App() {
 	const [tagFilterModal, setTagFilterModal] = useState(false)
 
 	const showGameListHandler = () => {
+		setTagFilterModal(false)
 		setGameListModal(true)
 	}
 	const hideGameListHandler = () => {
 		setGameListModal(false)
 	}
 	const showTagFilterHandler = () => {
+		setGameListModal(false)
 		setTagFilterModal(true)
 	}
 	const hideTagFilterModal =() => {
@@ -44,7 +43,7 @@ function App() {
 		<BrowserRouter>
 			<ApolloProvider client={client}>
 				<div>
-					<Navigation onShowGameList={showGameListHandler} onShowTagFilter={showTagFilterHandler} />
+					<Navigation onShowGameList={showGameListHandler} onShowTagFilter={showTagFilterHandler} onHideGameModal={hideGameListHandler} onHideTagModal={hideTagFilterModal}/>
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/category/:id' element={<Category />} />
@@ -52,8 +51,8 @@ function App() {
 						<Route path='/game/:id' element={<Game />} />
 						<Route path='/post/:id' element={<Post />} />
 					</Routes>
-					{gameListModal && <GameListModal onHideModal={hideGameListHandler} />}
-					{tagFilterModal && <TagFilterModal onHideModal={hideTagFilterModal} />}
+{gameListModal && <ModalCard content={<GameList onHideModal={hideGameListHandler}/>} onHideModal={hideGameListHandler}/>}
+{tagFilterModal && <ModalCard content={<TagFilter onHideModal={hideTagFilterModal}/>} onHideModal={hideTagFilterModal}/>}
 				</div>
 			</ApolloProvider>
 			<Footer />

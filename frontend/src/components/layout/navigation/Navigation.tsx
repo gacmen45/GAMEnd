@@ -26,7 +26,7 @@ const Navigation = (props) => {
 				<NavBar />
 				{matches && <Social className={styles['nav__social']} />}
 				{!matches && <Hamburger toggled={isOpen} toggle={setOpen} />}
-				{!matches && <NavSidebar mobileNav={isOpen} onCloseHandler={closeNavHandler} onShowGameList={props.onShowGameList} onShowTagFilter={props.onShowTagFilter}/> }
+				{!matches && <NavSidebar mobileNav={isOpen} onCloseHandler={closeNavHandler} onShowGameList={props.onShowGameList} onShowTagFilter={props.onShowTagFilter} onHideGameModal={props.onHideGameModal} onHideTagModal={props.onHideTagModal}/> }
 			</Wrapper>
 		</nav>
 	)

@@ -39,14 +39,18 @@ const showTagFilter = () => {
 
 const closeHandler =() =>{
 	props.onCloseHandler()
+	props.onHideGameModal()
+	props.onHideTagModal()
 }
+
+console.log(props.onHideTagModal);
 
 	return (
 		<div className={styles.items}>
 			<ul className={styles['items__list']}>
 				{data.categories.data.map((category: Category) => (
 					<Link to={`/category/${category.id}`} className={styles['items__link']} key={category.id}>
-						<li key={category.id} className={styles['items__item']} onClick={props.onCloseHandler}>
+						<li key={category.id} className={styles['items__item']} onClick={closeHandler}>
 							{category.attributes.name}
 						</li>
 					</Link>
