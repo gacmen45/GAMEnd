@@ -4,6 +4,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import Card from '../UI/card/Card'
 
 import styles from './PostCard.module.scss'
+import Button from '../UI/button/Button'
 
 interface Props {
 	id: string
@@ -12,6 +13,7 @@ interface Props {
 	publishedAt: string
 	image: string
 	categories: string
+	categoriesId:string
 	className: string
 	handleView: Boolean
 }
@@ -25,8 +27,8 @@ const PostCard = (props: Props) => {
 	return (
 		<Card key={props.id} className={`${splitClass} ${props.handleView ? styles.list : ''}`}>
 			<Link to={`/post/${props.id}`} className={styles['card__link']}>
-				<div className={styles['card__img']}>
-					<img src={image} alt='' />
+				<div className={styles['card__img']} style={{backgroundImage:`url(${image})`}}>
+					{/* <img src={image} alt='' /> */}
 				</div>
 				<div className={styles['card__text']}>
 				<h3 className={styles['card__text-title']}>{props.title}</h3>
@@ -34,7 +36,8 @@ const PostCard = (props: Props) => {
 				<ReactMarkdown className={styles['card__text-content']}>{description}</ReactMarkdown>
 				<div className={styles['card__text-bottom']}>
 				<p className={styles['card__text-bottom-publishedAt']}>{date}</p>
-				<p className={styles['card__text-bottom-category']}>{props.categories}</p>
+				<Link to={`/category/${props.categoriesId}`} className={styles['card__link']}><Button className={styles['card__text-bottom-btn']}>{props.categories}</Button></Link>
+				{/* <p className={styles['card__text-bottom-category']}>{props.categories}</p> */}
 				</div>
 				</div>
 			</Link>

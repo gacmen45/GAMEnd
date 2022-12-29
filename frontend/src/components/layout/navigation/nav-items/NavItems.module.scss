@@ -8,14 +8,14 @@
 	margin: 1em 1.5em;
 	text-transform: uppercase;
 	font-weight: bold;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		margin: 0;
 	}
 
 	&__list {
 		list-style: none;
 		width: 100%;
-		@media (min-width: 768px) {
+		@media (min-width: 992px) {
 			display: flex;
 			flex-direction: row;
 		}
@@ -28,7 +28,7 @@
 		@include item;
 		margin: 1em 0;
 		padding: 1em;
-		@media (min-width: 768px) {
+		@media (min-width: 992px) {
 			padding: 0.5em 1em;
 			margin: 0 1em;
 		}
