@@ -9,6 +9,7 @@ import GameList from '../../components/filter-list/game-filter/GameList'
 
 import styles from './Home.module.scss'
 import Test from '../../components/test/Test'
+import HeroImg from '../../components/layout/hero-img/HeroImg'
 
 interface Post {
 	id:string
@@ -37,6 +38,7 @@ const Home = () => {
 			</div>
 			<div className={styles['home__main']}>
 			{/* <RandomPost /> */}
+			<HeroImg/>
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} matches={matches} />
 			</div>
 		</Wrapper>
