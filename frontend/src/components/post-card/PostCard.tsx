@@ -4,6 +4,7 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import Card from '../UI/card/Card'
 
 import styles from './PostCard.module.scss'
+import Button from '../UI/button/Button'
 
 interface Props {
 	id: string
@@ -35,7 +36,7 @@ const PostCard = (props: Props) => {
 				<ReactMarkdown className={styles['card__text-content']}>{description}</ReactMarkdown>
 				<div className={styles['card__text-bottom']}>
 				<p className={styles['card__text-bottom-publishedAt']}>{date}</p>
-				<Link to={`/category/${props.categoriesId}`} className={styles['card__link']}><button className={styles['card__text-bottom-btn']}>{props.categories}</button></Link>
+				<Link to={`/category/${props.categoriesId}`} className={styles['card__link']}><Button className={styles['card__text-bottom-btn']}>{props.categories}</Button></Link>
 				{/* <p className={styles['card__text-bottom-category']}>{props.categories}</p> */}
 				</div>
 				</div>
