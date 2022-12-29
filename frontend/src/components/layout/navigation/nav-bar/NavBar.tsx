@@ -6,10 +6,10 @@ import Header from '../../header/Header'
 import styles from './NavBar.module.scss'
 
 const NavBar = () => {
-	const [matches, setMatches] = useState(window.matchMedia('(min-width: 768px)').matches)
+	const [matches, setMatches] = useState(window.matchMedia('(min-width: 992px)').matches)
 
 	useEffect(() => {
-		window.matchMedia('(min-width: 768px)').addEventListener('change', e => setMatches(e.matches))
+		window.matchMedia('(min-width: 992px)').addEventListener('change', e => setMatches(e.matches))
 	}, [])
 
 	return (

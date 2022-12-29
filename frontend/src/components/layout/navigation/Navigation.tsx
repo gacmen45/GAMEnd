@@ -10,10 +10,10 @@ import styles from './Navigation.module.scss'
 
 const Navigation = (props) => {
 	const [isOpen, setOpen] = useState(false)
-	const [matches, setMatchesMD] = useState(window.matchMedia('(min-width: 768px)').matches)
+	const [matches, setMatchesMD] = useState(window.matchMedia('(min-width: 992px)').matches)
 
 	useEffect(() => {
-		window.matchMedia('(min-width: 768px)').addEventListener('change', e => setMatchesMD(e.matches))
+		window.matchMedia('(min-width: 992px)').addEventListener('change', e => setMatchesMD(e.matches))
 	}, [])
 
 	const closeNavHandler=()=>{
