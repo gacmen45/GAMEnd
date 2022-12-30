@@ -24,8 +24,8 @@ const FilterList = (props:Props) => {
 			<h2 className={styles['filter__header']}>{props.title}</h2>
 			<ul className={styles['filter__list']}>
 				{props.allItems.map((item: Item) => (
-					<Link to={`/${props.direction}/${item.id}`} className={styles['filter__link']}>
-						<li onClick={props.onHideModal} className={styles['filter__item']}>
+					<Link to={`/${props.direction}/${item.id}`} className={styles['filter__link']} key={item.id}>
+						<li key={item.id} onClick={props.onHideModal} className={styles['filter__item']}>
 							<div className={styles['filter__item-box']}>
 								<div className={styles['filter__item-box-tag']}>
 									<img

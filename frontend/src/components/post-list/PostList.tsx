@@ -43,8 +43,6 @@ const handleView = () => {
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
-
-	console.log(props.allPosts.map((post:Post)=>post.attributes.categories.data.map((category:Post)=>category.id)))
 	return (
 
 		<div className={styles['list__box']}>

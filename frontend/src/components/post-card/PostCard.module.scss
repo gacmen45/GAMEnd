@@ -34,19 +34,17 @@
 		background-position: center;
 		background-size: cover;
 		border-radius: 20px;
-		
+
 		@media (min-width: 768px) {
 			min-height: 180px;
 			max-height: 180px;
 		}
-
 	}
 	&__text {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		margin-top: 1em;
-		
 
 		&-title {
 			text-align: center;
@@ -68,8 +66,15 @@
 			margin-top: 1em;
 			color: $third-font-color;
 
-			&-btn {
+			&-category {
 				padding: 0.5em 4em;
+				font-size:.8rem;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: $primary-color;
+				background-color: $secondary-font-color;
+				border-radius: 20px;
+				box-shadow: 2px 2px 15px black;
 				@media (min-width: 768px) {
 					padding: 0.5em 3em;
 				}
