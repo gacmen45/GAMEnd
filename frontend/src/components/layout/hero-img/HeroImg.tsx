@@ -5,7 +5,7 @@ import Header from '../header/Header'
 const HeroImg = () => {
 	return (
 		<Card className={styles.heroImg}>
-			<div className={styles.background}>
+			<div className={styles["heroImg__background"]}>
             <Header/>
             <h2>Trochę granka, trochę programowanka</h2>
             </div>

@@ -1,18 +1,20 @@
-import './App.module.scss'
-
-import Home from './pages/home/Home'
-import Navigation from './components/layout/navigation/Navigation'
-import Category from './pages/category/Category'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
-import Post from './pages/post/Post'
-import Footer from './components/layout/footer/Footer'
-import Tag from './pages/tag/Tag'
-import Game from './pages/game/Game'
 import { useState } from 'react'
+
+import Navigation from './components/layout/navigation/Navigation'
+import Home from './pages/home/Home'
+import Category from './pages/category/Category'
+import Game from './pages/game/Game'
+import Tag from './pages/tag/Tag'
+import Post from './pages/post/Post'
 import ModalCard from './components/modal-card/ModalCard'
-import GameList from './components/filter-list/game-filter/GameList'
 import TagFilter from './components/filter-list/tag-filter/TagFilter'
+import GameList from './components/filter-list/game-filter/GameList'
+import Footer from './components/layout/footer/Footer'
+
+import './App.module.scss'
+
 
 const client = new ApolloClient({
 	uri: 'http://localhost:1337/graphql',

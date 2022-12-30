@@ -1,8 +1,13 @@
-import styles from './PostList.module.scss'
-import PostCard from '../post-card/PostCard'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTableCells } from '@fortawesome/free-solid-svg-icons'
+
+import PostCard from '../post-card/PostCard'
+import Button from '../UI/button/Button'
+
+import styles from './PostList.module.scss'
+import { QueryHookOptions } from '@apollo/client'
+
 
 interface Post {
 	id: string
@@ -21,6 +26,7 @@ interface Props{
 	allPosts:any,
 	postAmount:number,
 	matches:boolean
+	post:any
 }
 
 const PostList = (props:Props) => {
@@ -32,13 +38,13 @@ const handleView = () => {
 	setView(current=>!current)
 }
 
-	const { loading, error, data } = props.query() //to props
+	const { loading, error, data } = props.query()
 
 	if (loading) return <p>loading...</p>
 	if (error) return <p>error...</p>
 
 
-	console.log(props.allPosts.map(post=>post.attributes.categories.data.map((category:Post)=>category.id)))
+	console.log(props.allPosts.map((post:Post)=>post.attributes.categories.data.map((category:Post)=>category.id)))
 	return (
 
 		<div className={styles['list__box']}>
@@ -47,10 +53,10 @@ const handleView = () => {
 				<h3>Wszystkie posty</h3>
 				<p>{props.postAmount}</p>
 				</div>
-			{props.matches &&<button className={styles['list__btn']} onClick={handleView}>{grid}</button>}
+			{props.matches &&<Button className={styles['list__btn']} onClick={handleView}>{grid}</Button>}
             </div>
             <div className={styles['list__items']}>
-			{props.allPosts.map((post: Post) => ( //to
+			{props.allPosts.map((post: Post) => (
 				<PostCard
 					key={post.id}
 					id={post.id}

@@ -8,6 +8,7 @@ interface Props {
 	title: string
 	direction: string
 	allItems:any
+	onHideModal:any
 }
 
 interface Item {

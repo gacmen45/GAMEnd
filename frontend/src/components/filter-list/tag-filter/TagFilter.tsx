@@ -1,10 +1,12 @@
-import styles from './TagFilter.module.scss'
 import { useTags } from '../../../hooks/useTags'
-import Card from '../../UI/card/Card'
-import { Link } from 'react-router-dom'
+
 import FilterListItems from '../FilterList'
 
-const TagFilter = (props) => {
+interface Props{
+	onHideModal:any
+}
+
+const TagFilter = (props:Props) => {
 	const { loading, error, data } = useTags()
 
 	if (loading) return <p>loading...</p>

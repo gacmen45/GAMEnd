@@ -2,6 +2,11 @@ import { useAllPosts } from '../../hooks/useAllPosts'
 import PostCard from '../post-card/PostCard'
 import styles from './RandomPost.module.scss'
 
+interface Post{
+	attributes:any
+	id:string
+}
+
 const RandomPost = () => {
 	const { loading, error, data } = useAllPosts()
 
@@ -20,7 +25,9 @@ const RandomPost = () => {
 				content={randomPost.attributes.content}
 				publishedAt={randomPost.attributes.publishedAt}
 				image={randomPost.attributes.image.data.attributes.url}
-				categories={randomPost.attributes.categories.data.map((category: Post) => category.attributes.name)}
+				categories={randomPost.attributes.categories.data.map((category:Post) => category.attributes.name)}
+				categoriesId={randomPost.attributes.categories.data.map((category:Post)=>category.id)}
+				handleView={true}
 			/>
 		 </div> 
 	)

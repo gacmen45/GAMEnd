@@ -5,13 +5,10 @@
 	&__box {
 		display: flex;
 		flex-direction: column;
-		// border: 1px solid green;
-		margin: auto;
-		margin-top:3em;
+		margin: 3em auto 0 auto;
 		width: 95%;
 
-		@media(min-width:500px) and (max-width:768px){
-			// padding: 0 3em;
+		@media (min-width: 500px) and (max-width: 768px) {
 			width: 80%;
 		}
 	}
@@ -19,8 +16,6 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		// padding: 1em;
-		// margin: 0 3em;
 
 		@media (min-width: 768px) {
 		}
@@ -41,11 +36,10 @@
 	&__btn {
 		margin-left: 1em;
 		padding: 1em;
-		background: none;
+		background-color: transparent;
 		border: 1px solid transparent;
-		cursor: pointer;
 		border-radius: 20px;
-		transition: all 0.6s;
+		box-shadow: none;
 		&-icon {
 			color: $primary-font-color;
 			text-align: center;
@@ -66,9 +60,8 @@
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
-		// border:1px solid yellow;
 
-		@media(min-width:768px){
+		@media (min-width: 768px) {
 			justify-content: space-around;
 		}
 	}

@@ -5,6 +5,11 @@ import styles from './NavSidebar.module.scss'
 
 interface Props {
 	mobileNav: boolean
+	onCloseHandler:any
+	onShowTagFilter:any
+	onHideGameModal:any
+	onHideTagModal:any
+	onShowGameList:any
 }
 
 

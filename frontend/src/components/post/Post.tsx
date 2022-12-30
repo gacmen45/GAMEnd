@@ -1,8 +1,10 @@
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import remarkBreaks from 'remark-breaks'
+
+import Wrapper from '../../components/UI/wrapper/Wrapper'
+
 import styles from './Post.module.scss'
 
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import Wrapper from '../../components/UI/wrapper/Wrapper'
-import remarkBreaks from 'remark-breaks'
 
 interface Props{
 	header:string,
@@ -29,7 +31,7 @@ const content = (props.content).replace(/\n/gi, '&nbsp; \n')
 				<p className={styles['post__text-date']}>{date}</p>
 			</div>
 
-			<div className={styles.test}>
+			<div className={styles['post__content']}>
 				<ReactMarkdown remarkPlugins={[remarkBreaks]}>{content}</ReactMarkdown>
 			</div>
 		</Wrapper>

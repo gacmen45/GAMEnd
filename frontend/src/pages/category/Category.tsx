@@ -1,8 +1,10 @@
-import styles from './Category.module.scss'
 import { useCategoryPosts } from '../../hooks/useCategoryPosts'
-import PostList from '../../components/post-list/PostList'
+
 import Wrapper from '../../components/UI/wrapper/Wrapper'
 import HeroImg from '../../components/layout/hero-img/HeroImg'
+import PostList from '../../components/post-list/PostList'
+
+import styles from './Category.module.scss'
 
 const Category = () => {
 	const { loading, error, data } = useCategoryPosts()
@@ -16,7 +18,7 @@ const Category = () => {
 	return (
 		<Wrapper className={styles.container}>
 			<HeroImg/>
-			<PostList query={useCategoryPosts} allPosts={allPosts} postAmount={postAmount} />
+			<PostList query={useCategoryPosts} allPosts={allPosts} postAmount={postAmount} matches={true}/>
 		</Wrapper>
 	)
 }

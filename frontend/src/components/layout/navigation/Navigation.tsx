@@ -8,7 +8,14 @@ import Wrapper from '../../UI/wrapper/Wrapper'
 
 import styles from './Navigation.module.scss'
 
-const Navigation = (props) => {
+interface Props{
+	onShowGameList:any
+	onShowTagFilter:any
+	onHideGameModal:any
+	onHideTagModal:any
+}
+
+const Navigation = (props:Props) => {
 	const [isOpen, setOpen] = useState(false)
 	const [matches, setMatchesMD] = useState(window.matchMedia('(min-width: 992px)').matches)
 

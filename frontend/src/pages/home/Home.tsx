@@ -2,14 +2,12 @@ import { useState,useEffect } from 'react'
 import { useAllPosts } from '../../hooks/useAllPosts'
 
 import Wrapper from '../../components/UI/wrapper/Wrapper'
-import PostList from '../../components/post-list/PostList'
-import RandomPost from '../../components/random-post/RandomPost'
+import HeroImg from '../../components/layout/hero-img/HeroImg'
 import TagFilter from '../../components/filter-list/tag-filter/TagFilter'
 import GameList from '../../components/filter-list/game-filter/GameList'
+import PostList from '../../components/post-list/PostList'
 
 import styles from './Home.module.scss'
-import Test from '../../components/test/Test'
-import HeroImg from '../../components/layout/hero-img/HeroImg'
 
 interface Post {
 	id:string
@@ -33,11 +31,10 @@ const Home = () => {
 	return (
 		<Wrapper className={styles['home__container']}>
 			<div className={styles['home__filters']}>
-			{matches &&<TagFilter />}
-			{matches &&<GameList />}
+			{matches &&<TagFilter onHideModal={true} />}
+			{matches &&<GameList onHideModal={true}/>}
 			</div>
 			<div className={styles['home__main']}>
-			{/* <RandomPost /> */}
 			<HeroImg/>
 			<PostList query={useAllPosts} allPosts={allPosts} postAmount={postAmount} matches={matches} />
 			</div>

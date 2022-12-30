@@ -1,13 +1,20 @@
-import Modal from './../../components/UI/modal/Modal'
-// import TagFilter from './TagFilter'
-import styles from './ModalCard.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
+
+import Modal from './../../components/UI/modal/Modal'
 import Button from '../UI/button/Button'
+
+import styles from './ModalCard.module.scss'
+import { Component } from 'react'
 
 const close = <FontAwesomeIcon icon={faX} className={styles['btn-icon']} />
 
-const ModalCard = props => {
+interface Props{
+	onHideModal:any
+	content:Component
+}
+
+const ModalCard = (props:Props) => {
 	return (
 		<Modal onHideModal={props.onHideModal}>
 			<div className={styles.box}>

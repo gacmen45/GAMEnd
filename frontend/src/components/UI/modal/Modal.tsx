@@ -1,12 +1,22 @@
 import { Fragment, } from 'react'
+
 import  ReactDOM  from 'react-dom'
+
 import styles from './Modal.module.scss'
 
-const Backdrop = props => {
+interface Backdrop{
+	onHideModal:any;
+}
+
+interface Modal{
+	children:React.ReactNode
+}
+
+const Backdrop = (props:Backdrop) => {
 	return <div className={styles.backdrop} onClick={props.onHideModal}/>
 }
 
-const ModalOverlay = props => {
+const ModalOverlay = (props:Modal) => {
 	return (
 		<div className={styles.modal}>
 			<div className={styles.content}>{props.children}</div>
@@ -15,7 +25,7 @@ const ModalOverlay = props => {
 }
 
 const portalElement = document.getElementById('overlays')
-const Modal = (props) => {
+const Modal = props => {
 
    return <Fragment>
     {ReactDOM.createPortal(<Backdrop onHideModal={props.onHideModal}/>, portalElement)}
