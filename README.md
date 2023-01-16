@@ -39,9 +39,9 @@ userName: admin@admin.com
 Password: Admin12345
 
 FRONTEND:
-* In the project directory, run:'npm run dev'
+* In the project directory, run:`npm run dev`
 
-* In the project directory, run: `npm i` and  `npm run`
+* In the project directory, run: `npm i`  and  `npm run`
 
 
 ## Technologies
